@@ -6,10 +6,14 @@ class Tournooi{
     public $stad;
     public $tijdstip;
     public $prijs;
+    public $wedstrijden;
     
     function __construct($naam, $stad){
         $this->naam = $naam;
         $this->stad = $stad;
+    }
+    function toonSchema(){
+        echo "TBD toonschema in Tournooi";
     }
 }
 class Wedstrijd{
