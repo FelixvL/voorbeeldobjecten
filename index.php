@@ -19,7 +19,7 @@ include "functions.php";
         <input type="button" value="voeg toe" onclick="nieuwtournooi();"><br>
         <?php
             $megaDAO = new MegaDAO();
-            $megaDAO->latenZien();
+            echo $megaDAO->latenZien();
         ?>
         <hr>
         <hr>
@@ -28,5 +28,8 @@ include "functions.php";
         Specialisatie Vechter<input type="text" id="specialisatievechter"><br>
         SpecialTrick Vechter<input type="text" id="specialtrickvechter"><br>
         <input type="button" value="voeg toe" onclick="nieuwvechter();">
+        <?php
+            echo $megaDAO->vechterLatenZien();
+        ?>
     </body>
 </html>
