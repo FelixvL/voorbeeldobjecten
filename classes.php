@@ -45,12 +45,16 @@ class MegaDAO{
     public $conn;
     function opslaanTournooi($tournooi){
         $sql = "INSERT INTO tournooi (naam, stad, tijdstip, prijs) VALUES ('$tournooi->naam', '$tournooi->stad', '$tournooi->tijdstip', $tournooi->prijs);";
-//        echo $sql;
         $this->conn->query($sql);
-        
+    }
+    function latenZien(){
+        $sql = "SELECT * FROM tournooi ORDER BY id ASC";
+        $result = $this->conn->query($sql); 
+        while($row = $result->fetch_assoc()){
+            echo $row['stad']."<br>";
+        }
     }
     function __construct(){
         $this->conn = mysqli_connect("localhost", "root", "", "dbtournooi");
     }
-    
 }

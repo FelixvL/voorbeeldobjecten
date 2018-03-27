@@ -16,7 +16,11 @@ include "functions.php";
         Stad Tournooi<input type="text" id="stadtournooi"><br>
         Tijdstip Tournooi<input type="text" id="tijdstiptournooi"><br>
         Prijs Tournooi<input type="text" id="prijstournooi"><br>
-        <input type="button" value="voeg toe" onclick="nieuwtournooi();">
+        <input type="button" value="voeg toe" onclick="nieuwtournooi();"><br>
+        <?php
+            $megaDAO = new MegaDAO();
+            $megaDAO->latenZien();
+        ?>
         <hr>
         <hr>
         Naam Vechter<input type="text" id="naamvechter"><br>

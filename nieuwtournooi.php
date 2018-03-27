@@ -1,9 +1,6 @@
 <?php
     include "classes.php";
-
-    echo "Ik doe het in nieuw tournooi";
     $tournooi = json_decode($_POST['tournooi']);
-    echo $tournooi->naam;
     $md = new MegaDAO();
     $md->opslaanTournooi($tournooi);
     
