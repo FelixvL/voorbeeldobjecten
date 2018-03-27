@@ -1,3 +1,22 @@
+function maakmatch(){
+    var wedstrijd = {};
+    wedstrijd.aantalrondenwedstrijd = document.getElementById("aantalrondenwedstrijd").value;
+    wedstrijd.tijdstipwedstrijd = document.getElementById("tijdstipwedstrijd").value;
+    wedstrijd.blauwevechter = document.getElementById("vechter1").value;
+    wedstrijd.rodevechter = document.getElementById("vechter2").value;
+    var raymon = new XMLHttpRequest();
+    raymon.onreadystatechange = function (){
+        if(this.readyState === 4 && this.status === 200){
+            console.log(this.responseText);
+//            document.location = 'index.php';
+        }
+    }
+    var data = JSON.stringify(wedstrijd);
+    raymon.open("POST", "nieuwwedstrijd.php", true);
+    raymon.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    raymon.send("wedstrijd="+data);
+}
+
 function nieuwtournooi(){
     var tournooi = {};
     tournooi.naam = document.getElementById("naamtournooi").value;
