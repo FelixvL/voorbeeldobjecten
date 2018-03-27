@@ -41,3 +41,16 @@ class Vechter{
         echo "TBD vechten in vechter";
     }
 }
+class MegaDAO{
+    public $conn;
+    function opslaanTournooi($tournooi){
+        $sql = "INSERT INTO tournooi (naam, stad, tijdstip, prijs) VALUES ('$tournooi->naam', '$tournooi->stad', '$tournooi->tijdstip', $tournooi->prijs);";
+//        echo $sql;
+        $this->conn->query($sql);
+        
+    }
+    function __construct(){
+        $this->conn = mysqli_connect("localhost", "root", "", "dbtournooi");
+    }
+    
+}
